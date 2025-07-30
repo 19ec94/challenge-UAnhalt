@@ -69,34 +69,7 @@ c = get_integer_input("Number of colours (c) = ", min_value=1)
 print("\nEnter the maximum number of repetitions allowed per colour (1 to 6):")
 m = get_integer_input("Maximum repetitions per colour (m) = ", min_value=1, max_value=6)
 
-# Input:
-#while True:
-#    try: 
-#        print(f"Enter the number of colours (1 <= c) to paint the cube's facets: ")
-#        c = int(input("c = "))
-#        if c < 1:
-#            print("The number of colours must be at least greater than 1.\n")
-#            continue
-#
-#        break
-#
-#    except ValueError:
-#        print("Please enter a valid integer")
-#        
-#
-#while True:
-#    try:
-#        print(f"Enter the maximum number of repetions (0 <= m <= 6) allowed per colour")
-#        m = int(input("m = "))
-#        if m > 6:
-#            print("Cube has only 6 faces. So, maximum repetion per colour should be less than six\n")
-#            continue
-#
-#        break
-#
-#    except ValueError:
-#        print("Please enter a valid integer")
-
 poly_Z = expand_polynomials(c)
 result = count_cube_colorings(poly_Z,m)
 print(f"Number of distinct colorings with c={c}, max repetions per color m={m}: {result}")
+

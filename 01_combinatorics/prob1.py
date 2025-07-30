@@ -1,14 +1,14 @@
 from sympy import symbols, expand, Poly
 from fractions import Fraction
 
-def expand_polynomials(c):
-    # Create symbols for colors: c1, c2, ..., c_c
-    colors = symbols(f'c1:{c+1}')  # c1 to c_c
+def create_cycle_index_polynomial(c):
+    # Create symbols for colours: c1, c2, ..., c_c
+    colours = symbols(f'c1:{c+1}')  # c1 to c_c
 
     # Build a_i = sum of c_j^i for j=1..c, i=1..4
-    a = [0]  # dummy zero index
+    a = [0]  # dummy zero index needed for index and cycle length matching
     for i in range(1, 5):
-        a_i = sum(color**i for color in colors)
+        a_i = sum(colour**i for colour in colours)
         a.append(a_i)
 
     # Cube rotation group cycle index polynomial
@@ -23,20 +23,21 @@ def expand_polynomials(c):
     # Fully expand polynomial
     Z_expanded = expand(Z)
 
-    # Convert to polynomial in color variables
-    poly_Z = Poly(Z_expanded, *colors)
-    return poly_Z
+    # Convert to polynomial in colour variables
+    Z_in_colour_variables = Poly(Z_expanded, *colours)
+    return Z_in_colour_variables 
 
-def count_cube_colorings(poly_Z, m):
-    total = 0
+def count_cube_colourings(Z_in_colour_variables, m):
+    total_distinct_colourings = 0
+    relevant_colour_combinations = []
     # poly_Z.terms() returns list of (exponents_tuple, coefficient)
-    for exponents, coeff in poly_Z.terms():
+    for exponents, coeff in Z_in_colour_variables.terms():
         # exponents is a tuple like (e1, e2, ..., e_c)
         if sum(exponents) == 6 and all(e <= m for e in exponents):
-            print(exponents, coeff)
-            total += coeff
+            relevant_colour_combinations.append([exponents, coeff])
+            total_distinct_colourings += coeff
 
-    return total
+    return [relevant_colour_combinations, total_distinct_colourings]
 
 def get_integer_input(prompt, min_value=None, max_value=None):
     """
@@ -62,14 +63,19 @@ def get_integer_input(prompt, min_value=None, max_value=None):
             print("Invalid input! Please enter a valid integer.\n")
 
 
-# Usage with clear prompts and validation:
+# Usage:
 print("Enter the number of colours (at least 1) to paint the cube's facets:")
 c = get_integer_input("Number of colours (c) = ", min_value=1)
 
 print("\nEnter the maximum number of repetitions allowed per colour (1 to 6):")
 m = get_integer_input("Maximum repetitions per colour (m) = ", min_value=1, max_value=6)
 
-poly_Z = expand_polynomials(c)
-result = count_cube_colorings(poly_Z,m)
-print(f"Number of distinct colorings with c={c}, max repetions per color m={m}: {result}")
+Z_in_colour_variables = create_cycle_index_polynomial(c)
+relevant_colour_combinations, total_distinct_colourings = count_cube_colourings(Z_in_colour_variables,m)
+
+for colour_combination, coefficient in relevant_colour_combinations:
+    combination_str = ", ".join(f"c{i+1}:{value}" for i, value in enumerate(colour_combination))
+    print(f"Using the colour combination ({combination_str}), there are {coefficient} distinct ways to colour the cube.")
+
+print(f"Total number of distinct colourings with c={c} colours and max repetions per colour m={m} is: {total_distinct_colourings}")
 

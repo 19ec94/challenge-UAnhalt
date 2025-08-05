@@ -31,5 +31,5 @@ plt.xlabel('Pearson correlation coefficient r')
 plt.ylabel('Density')
 plt.legend()
 plt.grid(True)
-plt.show()
+plt.savefig('pearson_distribution.png')
 

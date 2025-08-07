@@ -1,6 +1,6 @@
 # 01_combinatorics: Distinct Colourings of a Cube
 
-This repository provides code to compute the number of **distinct ways to colour the six faces of a cube** using up to `c` colours, with each colour used at most `m` times. Colourings that are the same up to cube rotations are counted only once, using **Burnside’s Lemma** and the **cycle index polynomial**.
+This code computes the number of **distinct ways to colour the six faces of a cube** using up to `c` colours, with each colour used at most `m` times. Colourings that are the same up to cube rotations are counted only once, using **Burnside’s Lemma** and the **cycle index polynomial**.
 
 ## Features
 

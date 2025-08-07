@@ -15,7 +15,7 @@ This repository provides code to compute the number of **distinct ways to colour
 
 ### Install requirements
 
-If you have a `requirements.txt` file, run:
+Either run:
 
 ```bash
 pip install -r requirements.txt

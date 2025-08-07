@@ -13,6 +13,14 @@ pip install numpy matplotlib scipy sympy
 ```
 ---
 
+## How to use
+
+- Run the script with `python3 prob2.py`.
+- It will generate and save a plot named `pearson_distribution.png` in the working directory.
+- The plot shows histograms of simulated Pearson \(r\) for sample sizes 4, 5, and 6 with 10,000 replications each.
+
+---
+
 ## Overview
 
 This program simulates the empirical distribution of the **Pearson correlation coefficient** \(r\) under the null hypothesis that two variables are independent and uniformly distributed.
@@ -23,10 +31,3 @@ The code then plots histograms of these empirical distributions for different sa
 
 ---
 
-## How to use
-
-- Run the script with `python3 prob2.py`.
-- It will generate and save a plot named `pearson_distribution.png` in the working directory.
-- The plot shows histograms of simulated Pearson \(r\) for sample sizes 4, 5, and 6 with 10,000 replications each.
-
----

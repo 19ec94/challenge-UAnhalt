@@ -45,15 +45,15 @@ Enter the number of colours (at least 1) to paint the cube's facets:
 Number of colours (c) = 3
 
 Enter the maximum number of repetitions allowed per colour (1 to 6):
-Maximum repetitions per colour (m) = 4
+Maximum repetitions per colour (m) = 3
 
-Using the colour combination (c1:4, c2:2, c3:0), there are 3 distinct ways to colour the cube.
+Using the colour combination (c1:3, c2:3, c3:0), there are 2 distinct ways to colour the cube.
 
-Using the colour combination (c1:3, c2:3, c3:0), there are 4 distinct ways to colour the cube.
+Using the colour combination (c1:3, c2:2, c3:1), there are 3 distinct ways to colour the cube.
 
 ...
 
-Total number of distinct colourings with c=3 colours and max repetitions per colour m=4 is: 57
+Total number of distinct colourings with c=3 colours and max repetitions per colour m=3 is: 30 
 ```
 
 

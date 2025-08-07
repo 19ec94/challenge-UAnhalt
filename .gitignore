@@ -209,3 +209,5 @@ __marimo__/
 
 # Directory
 *arxiv/
+*.png
+*.out 

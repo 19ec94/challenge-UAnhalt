@@ -9,11 +9,13 @@ from [this paper](https://doi.org/10.1137/120904238).
 To run a file named `1d_fluxContinuity_noSource.cpp` , execute the following (for example in linux)
 
 ```bash
-!g++ --std=c++20 -Wall -Wextra -Wpedantic -Warray-bounds 1d_fluxContinuity_noSource.cpp
+g++ --std=c++20 -Wall -Wextra -Wpedantic -Warray-bounds 1d_fluxContinuity_noSource.cpp
 ```
 
-to compile and the exececute
+to compile and then run  
 
 ```bash
 ./a.out
 ```
+
+to execute.

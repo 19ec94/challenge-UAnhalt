@@ -40,7 +40,7 @@ You will be prompted for:
 - The maximum number of times any single colour may be used on the cube’s faces (`m`, with `1 ≤ m ≤ 6`).
 
 **Example session:**
-
+```bash
 Enter the number of colours (at least 1) to paint the cube's facets:
 Number of colours (c) = 3
 
@@ -54,6 +54,7 @@ Using the colour combination (c1:3, c2:3, c3:0), there are 4 distinct ways to co
 ...
 
 Total number of distinct colourings with c=3 colours and max repetitions per colour m=4 is: 57
+```
 
 
 ## How does this work?

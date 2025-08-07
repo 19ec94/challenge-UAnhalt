@@ -18,7 +18,7 @@ def simulate_pearson_distribution(n, r_reps=10000):
     return np.array(r_values)
 
 # Run for various n
-ns = [4, 5, 6, 7, 8, 9]
+ns = [4, 5, 6]
 r_reps = 10000
 plt.figure(figsize=(12, 8))
 

@@ -77,5 +77,5 @@ for colour_combination, coefficient in relevant_colour_combinations:
     combination_str = ", ".join(f"c{i+1}:{value}" for i, value in enumerate(colour_combination))
     print(f"Using the colour combination ({combination_str}), there are {coefficient} distinct ways to colour the cube.")
 
-print(f"Total number of distinct colourings with c={c} colours and max repetions per colour m={m} is: {total_distinct_colourings}")
+print(f"Total number of distinct colourings with c={c} colours and max repetitions per colour m={m} is: {total_distinct_colourings}")
 
